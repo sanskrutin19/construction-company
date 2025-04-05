@@ -1,0 +1,384 @@
+/* General Styles */
+:root {
+    --primary-color: #020405; /* Dark Blue */
+    --secondary-color: #ffcc00; /* Yellow */
+    --background-color: #000000; /* Black */
+    --text-color: #e0e0e0; /* Light Text */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition:background 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 300%;
+    animation: slide 12s infinite;
+}
+
+.hero .carousel img {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+@keyframes slide {
+    0%, 100% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.hero-text h1 {
+    font-size: 40px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.3);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 280px;
+}
+
+.about-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Team Section */
+.team {
+    padding: 80px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.3);
+    text-align: center;
+    width: 280px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for contact form and map */
+    gap: 40px; /* Space between form and map */
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    align-items: flex-start; /* Align both items at the top */
+}
+
+/* Contact Form */
+.contact-form {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.3);
+    text-align: center;
+    max-width: 800px;
+    width: 100%; /* Ensure the form takes the full width within the available space */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    background: #1a1a1a;
+    color: #f4f4f4;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: none;
+    background: var(--secondary-color);
+    color: #1a1a1a;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e6b800;
+}
+
+/* Contact Info */
+.contact-info {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%; /* Ensure the contact info takes the full width */
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Map Section */
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure the map container takes available width */
+}
+
+.map-container iframe {
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 500px; /* Set a max width to prevent it from being too wide */
+    height: 220px; /* Adjusted height */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Stack form and map vertically on small screens */
+        gap: 20px;
+    }
+
+    .contact-form, .contact-info {
+        width: 90%; /* Make the form and info take most of the screen on small devices */
+    }
+
+    .map-container iframe {
+        max-width: 100%; /* Ensure the map scales well on smaller screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container, .team-container, .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Services Section */
+.services {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.services h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    align-content: center;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card {
+    background: #222;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 6px rgba(255, 204, 0, 0.3);
+    transition: transform 0.3s;
+    width: 280px; /* Matches about-box width */
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+}
